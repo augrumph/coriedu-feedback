@@ -6,28 +6,32 @@ const IDModal = ({ onClose }) => {
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
 
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-  };
-
   const handleSubmit = () => {
     if (inputValue === "001") {
-      onClose(); // Chama a função onClose quando o ID é correto
+      onClose();
     } else {
       setError("ID incorreto. Tente novamente.");
+    }
+  };
+
+  // Função que escuta o evento de tecla
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSubmit();
     }
   };
 
   return (
     <div className="modal-overlay">
       <div className="modal-container">
-        <h2 className="modal-title">Digite o ID de Acesso</h2>
+        <h2 className="modal-title">Digite seu ID</h2>
         <input
           type="text"
-          value={inputValue}
-          onChange={handleInputChange}
-          placeholder="Insira o ID"
           className={`modal-input ${error ? "input-error" : ""}`}
+          placeholder="Digite o ID"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          onKeyDown={handleKeyDown} // Adicionando a função que lida com o Enter
         />
         {error && <p className="error-message">{error}</p>}
         <button className="modal-button" onClick={handleSubmit}>
@@ -38,7 +42,6 @@ const IDModal = ({ onClose }) => {
   );
 };
 
-// Validação de props com PropTypes
 IDModal.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
