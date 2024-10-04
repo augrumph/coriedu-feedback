@@ -21,36 +21,12 @@ const CardAnexos = () => {
           <button className="collapsible" onClick={() => toggleSection(1)}>
             <span className="subtitle-number">11.1</span>
             {activeSections.includes(1) ? <ChevronDown /> : <ChevronRight />}
-            Respostas do Aluno
-          </button>
-          <div
-            className="content"
-            style={{
-              display: activeSections.includes(1) ? "block" : "none",
-            }}
-          >
-            <p className="info-content">
-              <strong>Diagnóstico Proposto:</strong> Bronquite Aguda
-              <br />
-              <strong>Exames Solicitados:</strong> Hemograma completo, raio-X de
-              tórax, PCR
-              <br />
-              <strong>Sintomas Relevantes:</strong> Tosse produtiva, febre
-              baixa, desconforto respiratório leve
-            </p>
-          </div>
-        </div>
-
-        <div className="info-section">
-          <button className="collapsible" onClick={() => toggleSection(2)}>
-            <span className="subtitle-number">11.2</span>
-            {activeSections.includes(2) ? <ChevronDown /> : <ChevronRight />}
             Referências Bibliográficas
           </button>
           <div
             className="content"
             style={{
-              display: activeSections.includes(2) ? "block" : "none",
+              display: activeSections.includes(1) ? "block" : "none",
             }}
           >
             <p className="info-content">

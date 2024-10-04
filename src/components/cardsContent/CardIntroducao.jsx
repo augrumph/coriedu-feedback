@@ -38,6 +38,7 @@ const CardIntroducao = () => {
             </p>
           </div>
         </div>
+
         <div className="info-section">
           <button className="collapsible" onClick={() => toggleSection(2)}>
             <span className="subtitle-number">2.2</span>
@@ -54,6 +55,30 @@ const CardIntroducao = () => {
               Paciente de 65 anos, sexo masculino, com histórico de tabagismo,
               apresentando febre alta, tosse produtiva com expectoração
               purulenta e dispneia há três dias.
+            </p>
+          </div>
+        </div>
+
+        <div className="info-section">
+          <button className="collapsible" onClick={() => toggleSection(3)}>
+            <span className="subtitle-number">2.3</span>
+            {activeSections.includes(3) ? <ChevronDown /> : <ChevronRight />}
+            Respostas do Aluno
+          </button>
+          <div
+            className="content"
+            style={{
+              display: activeSections.includes(3) ? "block" : "none",
+            }}
+          >
+            <p className="info-content">
+              <strong>Diagnóstico Proposto:</strong> Bronquite Aguda
+              <br />
+              <strong>Exames Solicitados:</strong> Hemograma completo, raio-X de
+              tórax, PCR
+              <br />
+              <strong>Sintomas Relevantes:</strong> Tosse produtiva, febre
+              baixa, desconforto respiratório leve
             </p>
           </div>
         </div>
