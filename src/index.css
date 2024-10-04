@@ -1,0 +1,369 @@
+/* Variáveis de Cores */
+:root {
+  --primary-color: #242873; /* Azul Escuro */
+  --secondary-color: #ff0f68; /* Rosa */
+  --tertiary-color: #9acb3f; /* Verde */
+
+  /* Outras cores */
+  --card-background: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --card-border-color: #e5e7eb;
+  --font-family: "Inter", sans-serif;
+}
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: #ffffff;
+  color: #111827;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Modo Escuro */
+body.dark-mode {
+  --primary-color: #1e1e1e; /* Cor anterior */
+  --secondary-color: #ff0f68;
+  --card-background: #000000;
+  --card-border-color: #ffffff;
+  background-color: #000000;
+  color: #d3d3d3;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgba(36, 40, 115, 0.9);
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: background-color 0.3s ease;
+  z-index: 998;
+}
+
+body.dark-mode .navbar {
+  background-color: #1e1e1e;
+}
+
+/* Logo na Navbar */
+.logo-container img {
+  width: 150px;
+  height: auto;
+  transition: width 0.3s;
+}
+
+/* Container Principal */
+.container {
+  max-width: 1200px;
+  margin: 100px auto 20px auto;
+  padding: 20px;
+}
+
+/* Título Principal */
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+body.dark-mode h1 {
+  color: #ffffff;
+}
+
+/* Card */
+.card {
+  background-color: var(--card-background);
+  border-radius: 12px;
+  border: 1px solid var(--card-border-color);
+  box-shadow: 0 4px 6px var(--card-shadow);
+  overflow: hidden;
+  font-family: var(--font-family);
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+  position: relative;
+}
+
+body.dark-mode .card {
+  box-shadow: none;
+}
+
+/* Card Header */
+.card-header {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 15px 20px;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+body.dark-mode .card-header {
+  background-color: #2a2a2a; /* Ligeiramente mais claro que antes */
+  color: #ffffff;
+}
+
+/* Título do Card */
+.card-title {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  width: 100%;
+  text-align: left;
+  line-height: 1.2;
+  margin-top: 5px;
+}
+
+body.dark-mode .card-title {
+  color: #ffffff;
+}
+
+/* Card Body */
+.card-body {
+  padding: 20px;
+}
+
+/* Seção de Informação */
+.info-section {
+  margin-bottom: 15px;
+}
+
+/* Número do Subtítulo */
+.subtitle-number {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+body.dark-mode .subtitle-number {
+  background-color: #2a2a2a; /* Ligeiramente mais claro que antes */
+  color: #ffffff;
+}
+
+/* Título da Informação */
+.info-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--secondary-color);
+}
+
+body.dark-mode .info-title {
+  color: var(--secondary-color);
+}
+
+/* Conteúdo da Informação */
+.info-content {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: inherit;
+}
+
+/* Botão de Alternância de Tema Flutuante */
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.3s;
+  z-index: 1000;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+body.dark-mode .theme-toggle {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Seções Colapsáveis */
+.collapsible {
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  outline: none;
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.collapsible .subtitle-number {
+  width: 40px;
+  height: 40px;
+  font-size: 0.9rem;
+  margin-right: 10px;
+}
+
+.collapsible:hover {
+  text-decoration: underline;
+}
+
+.content {
+  display: none;
+  overflow: hidden;
+  padding-left: 20px;
+}
+
+/* Lista para o Resumo do Professor */
+.professor-summary .info-content {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 90%;
+    padding: 40px 20px;
+  }
+
+  .card {
+    max-width: 700px;
+  }
+
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .logo-container img {
+    width: 130px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgba(36, 40, 115, 0.9);
+  }
+
+  body.dark-mode .navbar {
+    background-color: #1e1e1e;
+  }
+
+  .logo-container img {
+    width: 120px;
+    margin-bottom: 10px;
+  }
+
+  /* Container Principal */
+  .container {
+    padding: 20px 16px;
+  }
+
+  .card {
+    padding: 0;
+    max-width: 100%;
+    margin: 20px 0;
+    border-radius: 12px;
+  }
+
+  .card-header {
+    padding: 15px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--primary-color);
+    position: relative;
+  }
+
+  body.dark-mode .card-header {
+    background-color: #2a2a2a;
+    color: #ffffff;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    width: 100%;
+    text-align: left;
+    line-height: 1.2;
+    margin-top: 5px;
+  }
+
+  .info-header {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .info-title {
+    font-size: 1.125rem;
+  }
+
+  /* Mantemos o tamanho do círculo e ajustamos o tamanho da fonte */
+  .subtitle-number {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+
+  body.dark-mode .subtitle-number {
+    background-color: #2a2a2a;
+    color: #ffffff;
+  }
+
+  .info-content {
+    word-wrap: break-word;
+  }
+
+  /* Garantir que o botão de tema fique à frente */
+  .theme-toggle {
+    z-index: 1001;
+  }
+}
