@@ -24,7 +24,7 @@ const IDModal = ({ onClose }) => {
   return (
     <div className="modal-overlay">
       <div className="modal-container">
-        <h2 className="modal-title">Digite seu ID</h2>
+        <h2 className="modal-title">Digite o ID do Atendimento</h2>
         <input
           type="text"
           className={`modal-input ${error ? "input-error" : ""}`}
